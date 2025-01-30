@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+ 
+</head>
+<body>
+  <div class="calculator" style="margin-left: 500px;margin-top: 50px;    background-color: bisque; text-align: center; padding: 10px;   display: grid;  gap: 20px; border: 1px solid black; border-radius: 10px;height:400px ;width: 290px; ">
+    <input type="text" class="display" id="display" disabled style=" margin-top: 10px;   background-color: rgb(231, 247, 238);margin-left:10px;   border: 1px solid black;border-radius: 10px; padding: 5px;  font-weight: bold; font-size: 2em;  text-align: end;  height: 39px;width:260px; padding: 5px;">
+    <div class="buttons">
+<div style="column-gap: 20px;">
+  
+      <button style="height: 50px; width: 50px;font-weight: bold; background-color: aqua; border-radius: 5px;"   onclick="Display('(')">(</button>
+      <button style="margin-left: 20px;  height: 50px; border-radius: 5px; width: 50px; font-weight: bold; background-color: aqua;"  onclick="Display(')')">)</button>
+      <button style="margin-left: 20px; height: 50px; border-radius: 5px; width: 50px; font-weight: bold; background-color: aqua;" onclick="Display('%')">%</button>
+      <button style="margin-left: 20px; height: 50px; width: 50px; font-weight: bold; background-color:aqua; border-radius: 5px;" onclick="clearDisplay()" class="clear">AC</button>
+
+
+
+    </div>
+
+<div style="margin-top: 10px;">
+      <button style="height: 50px; width: 50px;font-weight: bold; background-color: rgb(31, 210, 43); border-radius: 5px; " onclick="Display('7')">7</button>
+      <button style="margin-left: 20px; height: 50px; width: 50px; font-weight: bold; background-color: rgb(31, 210, 43); border-radius: 5px;" onclick="Display('8')">8</button>
+      <button style="margin-left: 20px; height: 50px; width: 50px; font-weight: bold; background-color: rgb(31, 210, 43); border-radius: 5px;" onclick="Display('9')">9</button>
+      <button style="margin-left: 20px; height: 50px; width: 50px; font-weight: bold; background-color: rgb(31, 210, 43); border-radius: 5px;" onclick="Display('÷')">÷</button>
+    
+
+    </div> 
+<div style="margin-top: 10px;">
+  <button style="height: 50px; width: 50px; font-weight: bold; background-color: rgb(174, 17, 17); border-radius: 5px;" onclick="Display('4')">4</button>
+  <button style="margin-left: 20px; height: 50px; width: 50px; font-weight: bold; background-color: rgb(174, 17, 17); border-radius: 5px;"  onclick="Display('5')">5</button>
+  <button style="margin-left: 20px; height: 50px; width: 50px; font-weight: bold; background-color: rgb(174, 17, 17); border-radius: 5px;" onclick="Display('6')">6</button>
+  <button style="text-align: center;  margin-left: 20px; height: 50px; width: 50px; font-weight: bold; background-color: rgb(174, 17, 17); border-radius: 5px; font-size: 25px;" onclick="Display('*')">*</button>
+
+
+</div>
+
+
+
+
+    <div style="margin-top: 10px; ">
+      <button style="height: 50px; width: 50px;font-weight: bold; background-color: rgb(100, 49, 210); border-radius: 5px;" onclick="Display('1')" class="operator">1</button>
+      <button style="margin-left: 20px; height: 50px; width: 50px;font-weight: bold; background-color: rgb(100, 49, 210); border-radius: 5px; " onclick="Display('2')" class="operator">2</button>
+      <button style="margin-left: 20px; height: 50px; width: 50px;font-weight: bold; background-color: rgb(100, 49, 210); border-radius: 5px; " onclick="Display('3')" class="operator">3</button>
+      <button style="margin-left: 20px; height: 50px; width: 50px;font-weight: bold; background-color: rgb(100, 49, 210); border-radius: 5px; " onclick="Display('-')" class="operator">-</button>
+      
+    </div>
+    <div style="margin-top: 10px;">
+      <button style="height: 50px; width: 50px;font-weight: bold; background-color: rgb(210, 49, 159); border-radius: 5px;" onclick="Display('0')">0</button>
+      <button style="margin-left:20px ;     height: 50px; width: 50px;font-weight: bold; background-color: rgb(210, 49, 159); border-radius: 5px;" onclick="Display('.')">.</button>
+      <button style="margin-left: 20px; height: 50px; width: 50px; font-weight: bold; background-color: rgb(210, 49, 159); border-radius: 5px;" onclick="calculate()" class="equal">Ans</button>
+      <button style="margin-left: 20px;  height: 50px; width: 50px;font-weight: bold; background-color: rgb(210, 49, 159); border-radius: 5px;" onclick="Display('+')">+</button>
+    </div>
+
+   
+
+
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+
+    function Display(value) {
+      display.value += value;
+    }
+
+    function clearDisplay() {
+      display.value = '';
+    }
+
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch (error) {
+        display.value = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
